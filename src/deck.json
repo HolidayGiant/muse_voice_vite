@@ -1,0 +1,46 @@
+{
+  "deck_id": "emotional_checkin",
+  "name": "Emotional Check-In",
+  "description": "A guided reflection ritual that adapts to the user’s reported mood.",
+  "type": "ritual",
+  "category": "emotional_regulation",
+  "session_length": "guided",
+  "estimated_duration_seconds": 600,
+  "recommended_position": "seated or lying down",
+  "movement_intensity": "none",
+  "prompts": [
+    {
+      "id": "mood-001",
+      "text": "How are you feeling right now? Say a number from 1 to 5 — with 1 being low and 5 being high.",
+      "format": "prompt",
+      "expect_user_speech": true,
+      "branch_map": {
+        "1": "mood-branch-low",
+        "2": "mood-branch-low",
+        "3": "mood-branch-neutral",
+        "4": "mood-branch-up",
+        "5": "mood-branch-up"
+      }
+    },
+    {
+      "id": "mood-branch-low",
+      "text": "Thank you. Let’s slow down together. Close your eyes and breathe with me for one minute.",
+      "format": "visualization"
+    },
+    {
+      "id": "mood-branch-neutral",
+      "text": "Thank you. Let’s take a moment of silence to center ourselves.",
+      "format": "ritual"
+    },
+    {
+      "id": "mood-branch-up",
+      "text": "Beautiful. You’re grounded and ready. Smile gently and think of something you're proud of.",
+      "format": "prompt"
+    },
+    {
+      "id": "mood-wrap",
+      "text": "Now bring your attention to your body. Notice where you feel calm or tight. Say 'next' when ready.",
+      "format": "instruction"
+    }
+  ]
+}
